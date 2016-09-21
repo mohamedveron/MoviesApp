@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MoviesTwoPane</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">Title</string>
+    <string name="add">Add to Favourite</string>
+    <string name="title_activity_details">Details</string>
+    <string name="action_mostPopular">MostPopular</string>
+    <string name="action_TopRated">TopRated</string>
+    <string name="action_Favourite">Favourite</string>
+</resources>
