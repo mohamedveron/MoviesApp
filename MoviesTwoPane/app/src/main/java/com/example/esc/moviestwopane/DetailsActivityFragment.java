@@ -35,10 +35,20 @@ public class DetailsActivityFragment extends Fragment {
     public DetailsActivityFragment() {
     }
 
+    public static DetailsActivityFragment newInstance(Bundle b) {
+        DetailsActivityFragment fragment = new DetailsActivityFragment();
+        fragment.setArguments(b);
+
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details, container, false);
+        Bundle extras = getActivity().getIntent().getExtras();
+        String x = extras.getString("overview");
+        Log.v("getArgumentsbundle ", extras.getParcelable("poster")+x + this.getArguments());
         View detailsHeader =  inflater.inflate(R.layout.details, container, false);
 
         ImageView poster = (ImageView)detailsHeader.findViewById(R.id.poster);
@@ -48,6 +58,7 @@ public class DetailsActivityFragment extends Fragment {
 
         ListView list = (ListView)view.findViewById(R.id.detailsList);
         list.addHeaderView(detailsHeader);
+
 
         final Intent intent = getActivity().getIntent();
         poster.setImageBitmap((Bitmap) intent.getParcelableExtra("poster"));
